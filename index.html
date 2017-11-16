@@ -7,12 +7,36 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="email=no">
 	<meta name="description"><meta name="keywords" content="Hexo, Gruntjs, Nodejs, Reactjs, Vuejs">
-	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 	<title>计算机维护队</title>
 	<link rel="stylesheet" href="/css/main_style.min.css">
 	<link rel="icon" href="/favicon.ico">
-	<style type="text/css">
-#fdck {border:1px solid #c0c0c0;margin:0 auto;padding:5px;background:#f0f0f0}
+	<style>
+	 .black_overlay{ 
+            display: none; 
+            position: absolute; 
+            top: 0%; 
+            left: 0%; 
+            width: 100%; 
+            height: 100%; 
+            background-color: black; 
+            z-index:1001; 
+            -moz-opacity: 0.8; 
+            opacity:.80; 
+            filter: alpha(opacity=88); 
+        } 
+        .white_content { 
+            display: none; 
+            position: absolute; 
+            top: 25%; 
+            left: 25%; 
+            width: 55%; 
+            height: 55%; 
+            padding: 20px; 
+            border: 10px solid orange; 
+            background-color: white; 
+            z-index:1002; 
+            overflow: auto; 
+        } 
     </style>
 	</head>
 <body>
@@ -65,70 +89,12 @@
 											<i class="icon icon-segmentfault"></i></a></li>
 									</ul>
 								</div>
-								<div id="img" style="position: absolute; left: 311; top: 815;visibility :hidden;" onmouseover="clearInterval(interval)" onmouseout="interval = setInterval('changePos()', delay)" align="middle">
-<span style="CURSOR:hand;color:red;font-weight:bold;font-size:12px" onclick="clearInterval(interval);img.style.visibility = 'hidden'">关闭</span>
-<div id="fdck">
-欢迎来到营了个销！<br>http://www.hcsem.com/
-</div>
-</div>
-<script language=javascript>
-var xPos = 20;
-var yPos = document.body.clientHeight;
-var step = 1;
-var delay = 30;
-var height = 0;
-var Hoffset = 0;
-var Woffset = 0;
-var yon = 0;
-var xon = 0;
-var pause = true;
-var interval;
-img.style.top = yPos;
-function changePos() {
-width = document.body.clientWidth;
-height = document.body.clientHeight;
-Hoffset = img.offsetHeight;
-Woffset = img.offsetWidth;
-img.style.left = xPos + document.body.scrollLeft;
-img.style.top = yPos + document.body.scrollTop;
-if (yon) {
-yPos = yPos + step;
-}
-else {
-yPos = yPos - step;
-}
-if (yPos < 0) {
-yon = 1;
-yPos = 0;
-}
-if (yPos >= (height - Hoffset)) {
-yon = 0;
-yPos = (height - Hoffset);
-}
-if (xon) {
-xPos = xPos + step;
-}
-else {
-xPos = xPos - step;
-}
-if (xPos < 0) {
-xon = 1;
-xPos = 0;
-}
-if (xPos >= (width - Woffset)) {
-xon = 0;
-xPos = (width - Woffset);
-}
-}
-function start() {
-img.style.visibility = "visible";
-interval = setInterval('changePos()', delay);
-}
-start();
-</script>
-
+								<p>示例弹出层：<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">请点这里</a></p> 
+        <div id="light" class="white_content">这是一个层窗口示例程序. 
+<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">点这里关闭本窗口</a></div> 
+        <div id="fade" class="black_overlay"></div> 
 								<div class="bottom">
 									<p class="copyright">© 2017 计算机维护队</p></div></div></div><script>var wrap = document.getElementById('wrap');
 window.onload = function () {
   wrap.className += ' done';
-}</script></body></html>89
+}</script></body></html>
